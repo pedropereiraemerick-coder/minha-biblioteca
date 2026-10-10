@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11131c">
+  <title>Minha Biblioteca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<div class="credit-owner">Pedro Henrick Pereira Emerick</div>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Minha Biblioteca">
+        <span class="brand-icon">▤</span>
+        <span data-i18n="appName">Minha Biblioteca</span>
+      </a>
+      <div class="top-actions">
+        <label class="language-control">
+          <span aria-hidden="true">文</span>
+          <select id="languageSelect" aria-label="Idioma">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+        <div id="headerProfile" class="header-profile hidden">
+          <button id="profileMenuButton" class="avatar avatar-small" type="button" aria-label="Abrir perfil">G</button>
+          <div id="profileDropdown" class="profile-dropdown hidden">
+            <div class="dropdown-user">
+              <div id="dropdownAvatar" class="avatar">G</div>
+              <div class="user-text">
+                <strong id="dropdownName">Gabriel Oliveira</strong>
+                <span id="dropdownEmail">gabriel@example.com</span>
+              </div>
+            </div>
+            <button id="openProfileButton" class="dropdown-item" type="button" data-i18n="editProfile">Editar perfil</button>
+            <button id="logoutButton" class="dropdown-item danger" type="button" data-i18n="logout">Sair da conta</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="authView" class="auth-layout">
+        <div class="welcome-panel">
+          <div class="eyebrow" data-i18n="welcomeEyebrow">SEU ESPAÇO DIGITAL</div>
+          <h1 data-i18n="welcomeTitle">Tudo o que você gosta, em um só lugar.</h1>
+          <p data-i18n="welcomeText">Guarde sites, organize seus favoritos e encontre seus links com facilidade.</p>
+          <div class="feature-list">
+            <div><span class="feature-check">✓</span><span data-i18n="feature1">Sua coleção de links organizada</span></div>
+            <div><span class="feature-check">✓</span><span data-i18n="feature2">Seu perfil do seu jeito</span></div>
+            <div><span class="feature-check">✓</span><span data-i18n="feature3">Interface em português ou inglês</span></div>
+          </div>
+          <div class="decorative-orbit orbit-one"></div>
+          <div class="decorative-orbit orbit-two"></div>
+        </div>
+
+        <div class="auth-card">
+          <div id="loginPanel">
+            <div class="eyebrow" data-i18n="loginEyebrow">BEM-VINDO DE VOLTA</div>
+            <h2 data-i18n="loginTitle">Entrar na sua conta</h2>
+            <p class="muted" data-i18n="loginSubtitle">Continue de onde você parou.</p>
+            <form id="loginForm" novalidate>
+              <label for="loginIdentifier" data-i18n="emailOrUsername">E-mail ou nome de usuário</label>
+              <input id="loginIdentifier" name="identifier" autocomplete="username" required placeholder="voce@exemplo.com">
+              <label for="loginPassword" data-i18n="password">Senha</label>
+              <div class="password-wrap">
+                <input id="loginPassword" name="password" type="password" autocomplete="current-password" required placeholder="••••••••">
+                <button class="eye-button" type="button" data-toggle-password="loginPassword" data-i18n="show">Ver</button>
+              </div>
+              <button class="text-button forgot-button" id="forgotPasswordButton" type="button" data-i18n="forgotPassword">Esqueci minha senha</button>
+              <button class="primary-button full-button" type="submit" data-i18n="loginButton">Entrar</button>
+            </form>
+            <!-- Entrada por código de compartilhamento -->
+<div class="share-access">
+    <div class="separator">
+        <span>ou compartilhe uma biblioteca</span>
+    </div>
+
+    <label for="shareCode">Código de compartilhamento</label>
+
+    <input
+        type="text"
+        id="shareCode"
+        placeholder="Digite o código do usuário"
+        autocomplete="off"
+    >
+
+    <button
+        id="shareCodeButton"
+        class="secondary-button full-button"
+        type="button"
+    >
+        Entrar com código
+    </button>
+
+    <p
+        id="shareCodeMessage"
+        class="status-message"
+        aria-live="polite"
+    ></p>
+</div>
+            <div class="separator"><span data-i18n="or">ou</span></div>
+            <button id="googleLoginButton" class="google-button full-button" type="button"><span class="google-mark">G</span><span data-i18n="continueGoogle">Continuar com Google</span></button>
+            <p class="auth-switch"><span data-i18n="noAccount">Ainda não tem uma conta?</span> <button id="showRegisterButton" class="text-button" type="button" data-i18n="createAccount">Criar conta</button></p>
+          </div>
+
+          <div id="registerPanel" class="hidden">
+            <div class="eyebrow" data-i18n="registerEyebrow">COMECE AGORA</div>
+            <h2 data-i18n="registerTitle">Crie sua conta</h2>
+            <p class="muted" data-i18n="registerSubtitle">É rapidinho. Vamos organizar seus links?</p>
+            <form id="registerForm" novalidate>
+              <label for="registerName" data-i18n="fullName">Nome completo</label>
+              <input id="registerName" autocomplete="name" required placeholder="Seu nome">
+              <label for="registerUsername" data-i18n="username">Nome de usuário</label>
+              <input id="registerUsername" autocomplete="username" required placeholder="seunome">
+              <label for="registerEmail" data-i18n="email">E-mail</label>
+              <input id="registerEmail" type="email" autocomplete="email" required placeholder="voce@exemplo.com">
+              <label for="registerPassword" data-i18n="password">Senha</label>
+              <div class="password-wrap">
+                <input id="registerPassword" type="password" autocomplete="new-password" required minlength="6" placeholder="Mínimo de 6 caracteres">
+                <button class="eye-button" type="button" data-toggle-password="registerPassword" data-i18n="show">Ver</button>
+              </div>
+              <label for="confirmPassword" data-i18n="confirmPassword">Confirmar senha</label>
+              <div class="password-wrap">
+                <input id="confirmPassword" type="password" autocomplete="new-password" required placeholder="Digite a senha novamente">
+                <button class="eye-button" type="button" data-toggle-password="confirmPassword" data-i18n="show">Ver</button>
+              </div>
+              <button class="primary-button full-button register-submit" type="submit" data-i18n="createMyAccount">Criar minha conta</button>
+            </form>
+            <p class="auth-switch"><span data-i18n="alreadyAccount">Já tem uma conta?</span> <button id="showLoginButton" class="text-button" type="button" data-i18n="loginButton">Entrar</button></p>
+          </div>
+
+          <div id="verificationPanel" class="hidden">
+            <div class="verification-icon">✉</div>
+            <div class="eyebrow" data-i18n="verifyEyebrow">SÓ MAIS UM PASSO</div>
+            <h2 data-i18n="verifyTitle">Confirme seu e-mail</h2>
+            <p class="muted" id="verificationDescription">Criamos sua conta. A confirmação real por e-mail ainda precisa ser conectada.</p>
+            <div class="verification-address" id="verificationEmail">voce@exemplo.com</div>
+            <div class="notice-box"><strong data-i18n="demoNoticeTitle">Prévia de demonstração</strong><p data-i18n="demoNoticeText">Este projeto local ainda não envia e-mails de verdade. O botão abaixo apenas simula a confirmação para você testar a aplicação.</p></div>
+            <button id="simulateVerificationButton" class="primary-button full-button" type="button" data-i18n="simulateVerification">Simular confirmação de e-mail</button>
+            <button id="backToLoginFromVerify" class="text-button back-link" type="button" data-i18n="backToLogin">Voltar para o login</button>
+          </div>
+
+          <div id="forgotPanel" class="hidden">
+            <div class="eyebrow" data-i18n="passwordHelp">AJUDA COM A CONTA</div>
+            <h2 data-i18n="forgotTitle">Recuperar senha</h2>
+            <p class="muted" data-i18n="forgotText">Digite seu e-mail. Nesta versão de demonstração, não enviaremos uma mensagem real.</p>
+            <form id="forgotForm" novalidate>
+              <label for="forgotEmail" data-i18n="email">E-mail</label>
+              <input id="forgotEmail" type="email" required placeholder="voce@exemplo.com">
+              <button class="primary-button full-button" type="submit" data-i18n="simulateRecovery">Testar recuperação</button>
+            </form>
+            <p id="forgotMessage" class="status-message" aria-live="polite"></p>
+            <button id="backFromForgot" class="text-button back-link" type="button" data-i18n="backToLogin">Voltar para o login</button>
+          </div>
+          <p id="authMessage" class="status-message" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="libraryView" class="library-view hidden">
+        <div class="dashboard-heading">
+          <div>
+            <div class="eyebrow" data-i18n="yourSpace">SEU ESPAÇO</div>
+            <h1><span data-i18n="libraryTitle">Sua biblioteca</span><span class="title-dot">.</span></h1>
+            <p class="muted" data-i18n="librarySubtitle">Seus sites favoritos, organizados do seu jeito.</p>
+          </div>
+          <button id="addSiteShortcut" class="primary-button" type="button">＋ <span data-i18n="addSite">Adicionar site</span></button>
+        </div>
+        <div class="library-toolbar">
+          <div class="search-wrap"><span>⌕</span><input id="searchSites" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Buscar na biblioteca..."></div>
+          <div class="site-count"><span id="siteCount">0</span> <span data-i18n="savedLinks">links salvos</span></div>
+        </div>
+        <div id="addSitePanel" class="add-site-panel hidden">
+          <div class="form-panel-heading"><div><h3 data-i18n="newLink">Novo link</h3><p class="muted" data-i18n="newLinkSubtitle">Adicione um site à sua coleção.</p></div><button id="closeAddSite" class="icon-button" type="button" aria-label="Fechar">×</button></div>
+          <form id="siteForm" class="site-form" novalidate>
+            <div><label for="siteName" data-i18n="siteName">Nome do site</label><input id="siteName" required placeholder="Ex.: YouTube"></div>
+            <div><label for="siteUrl" data-i18n="siteUrl">Endereço do site</label><input id="siteUrl" type="url" required placeholder="https://exemplo.com"></div>
+            <div><label for="siteCategory" data-i18n="category">Categoria</label><select id="siteCategory"><option value="Geral" data-i18n="general">Geral</option><option value="Estudo" data-i18n="study">Estudo</option><option value="Entretenimento" data-i18n="entertainment">Entretenimento</option><option value="Trabalho" data-i18n="work">Trabalho</option><option value="Ferramentas" data-i18n="tools">Ferramentas</option></select></div>
+            <button class="primary-button" type="submit" data-i18n="saveLink">Salvar link</button>
+          </form>
+          <p id="siteMessage" class="status-message" aria-live="polite"></p>
+        </div>
+        <div id="sitesGrid" class="sites-grid"></div>
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">↗</div>
+          <h3 data-i18n="emptyTitle">Sua biblioteca começa aqui</h3>
+          <p class="muted" data-i18n="emptyText">Adicione seu primeiro site para deixar tudo organizado em um só lugar.</p>
+          <button id="emptyAddButton" class="primary-button" type="button">＋ <span data-i18n="addFirstSite">Adicionar meu primeiro site</span></button>
+        </div>
+        <p class="local-warning" data-i18n="localWarning">Versão local: os dados ficam neste navegador. Não use senhas reais.</p>
+      </section>
+
+      <section id="profileView" class="profile-view hidden">
+        <button id="backToLibrary" class="back-button" type="button">← <span data-i18n="backToLibrary">Voltar à biblioteca</span></button>
+        <div class="profile-page-card">
+          <div class="eyebrow" data-i18n="accountSettings">SUA CONTA · CONFIGURAÇÕES</div>
+          <h1 data-i18n="myProfile">Meu perfil</h1>
+          <p class="muted" data-i18n="profileSubtitle">Gerencie suas informações pessoais.</p>
+          <div class="profile-identity">
+            <div id="profileAvatar" class="avatar avatar-large">G</div>
+            <div><h2 id="profileDisplayName">Gabriel Oliveira</h2><p id="profileHandle" class="muted">@gabriel</p><span class="muted tiny" data-i18n="avatarHint">Seu avatar usa a inicial do seu nome.</span></div>
+          </div>
+          <form id="profileForm" class="profile-form" novalidate>
+            <h3 data-i18n="personalInfo">Informações pessoais</h3>
+            <label for="profileName" data-i18n="fullName">Nome completo</label><input id="profileName" required>
+            <label for="profileUsername" data-i18n="username">Nome de usuário</label><input id="profileUsername" required>
+            <label for="profileEmail" data-i18n="email">E-mail</label><input id="profileEmail" type="email" disabled>
+            <label for="profileShareCode">Código de compartilhamento</label>
+
+<div class="share-code-row">
+    <input id="profileShareCode" type="text" readonly>
+    <button id="copyShareCodeButton" class="secondary-button" type="button">Copiar</button>
+</div>
+<p class="muted tiny">Compartilhe este código com seus amigos para que eles possam acessar sua biblioteca.</p>
+
+           <div class="button-row"><button class="primary-button" type="submit" data-i18n="saveChanges">Salvar alterações</button><button id="cancelProfile" class="secondary-button" type="button" data-i18n="cancel">Cancelar</button></div>
+            <p id="profileMessage" class="status-message" aria-live="polite"></p>
+          </form>
+          <div class="security-panel">
+            <h3 data-i18n="securityAccess">Segurança e acesso</h3>
+            <p class="muted" data-i18n="securitySubtitle">Proteja sua conta e mantenha seu e-mail atualizado.</p>
+            <div class="verification-row"><div><strong data-i18n="emailVerification">Verificação de e-mail</strong><p class="muted tiny" id="profileVerificationText">Demonstração</p></div><span id="verificationBadge" class="badge">Pendente</span></div>
+            <button id="changePasswordButton" class="text-button" type="button" data-i18n="changePassword">Alterar senha →</button>
+            <form id="changePasswordForm" class="hidden change-password-form" novalidate>
+              <label for="newPassword" data-i18n="newPassword">Nova senha</label><div class="password-wrap"><input id="newPassword" type="password" minlength="6" required><button class="eye-button" type="button" data-toggle-password="newPassword" data-i18n="show">Ver</button></div>
+              <p class="tiny muted" data-i18n="passwordDemoNote">Demonstração: a senha não é alterada nem salva de verdade.</p>
+            </form>
+          </div>
+          <button id="profileLogoutButton" class="secondary-button logout-profile" type="button" data-i18n="logout">Sair da conta</button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>▤ Minha Biblioteca</span><span data-i18n="footerText">Organize. Descubra. Guarde.</span></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
